@@ -1,7 +1,9 @@
 import React from 'react';
-import { FaSearch } from "react-icons/fa";
-import { FaCartPlus } from "react-icons/fa";
-import Darkmode from './Darkmode';
+import { Link } from 'react-router-dom';
+//import { FaSearch } from "react-icons/fa";
+//import { FaCartPlus } from "react-icons/fa";
+//import Darkmode from './Darkmode';
+
 
 const LinkMenu = [
   {
@@ -15,71 +17,54 @@ const LinkMenu = [
     link: '/about'
   },
   {
-    id: 1,
+    id: 3,
     name: 'Contacts',
     link: '/contacts'
   },
   {
-    id: 1,
+    id: 4,
     name: 'Blogs',
     link: '/blogs'
   }
   
 ]
 
-function Navbar() {
-  return (
-    <div>
-      <div className='py-4'>
-        <div className="container">
-          {/*Logo and Links */}
-          <div className='flex-item'>
-            <a href='#'>LPA</a>
-          </div>
-          {/*Menu Items */}
-          <div className='hidden-item'>
-            <ul className='flex-items'>
-              {
-                LinkMenu.map((data, index) => (
-                  <li key={index}>
-                    <a href={data.link} className='inline-block-item'>{data.name}</a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
+function Navbar({}) {
 
-          {/*Navbar */}
-          <div>
-            {/*Search Bar Section */}
-              <div>
-                <input 
-                className='search-bar' 
-                type='text' 
-                placeholder='Search Here' />
-                <FaSearch className='search-icon' />
-              </div>
-              {/*Cart Button Section */}
-              <button className='relative-btn'>
-                <FaCartPlus className='add-to-cart'/>
-                <div className=''>0</div>
-              </button>
-            {/*Dark Mode Section */}
-              <div>
-                <Darkmode/>
-              </div>
-              {/*Register */}
-              <div>
-                <button className='signup-btn'>Register</button>
-              </div>
-               {/*Login */}
-               <div>
-                <button className='login-btn'>Login</button>
-              </div>
-          </div>
+
+
+  return (
+    <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
+      <div className='container-fluid'>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+        </button>
+        <a className='navbar-brand' to='#'>LPA</a>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          {
+            LinkMenu.map((navigation, index) => (
+             <ul className=''>
+                <li key={index}>
+                   <Link to={navigation.link}>{navigation.name}</Link>
+                </li>
+              </ul>
+            ))
+          }
+        </div>
+        <form className='d-flex'>
+          <input className='form-control me-2' type='search' placeholder='Search' aria-label='Search'></input>
+          <button className='btn btn-outline-secondary' type='submit'>Search</button>
+        </form>
+        <div className="btn-group ms-3" role="group" aria-label="login-signup">
+            <Link to="/signup">
+                <button type="button" className="btn btn-primary">Sign Up</button>
+            </Link>
+            <Link to="/login">
+                <button type="button" className="btn btn-danger">Log In</button>
+            </Link>
         </div>
       </div>
-    </div>
+    </nav>
   )
 }
 
