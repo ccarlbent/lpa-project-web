@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
 
 const Login = () => {
   const [userName, setUserName] = useState('');
   const [passWord, setPassWord] = useState('');
+  
   const handleLogin = (e) => {
-      e.preventDefault();
+    console.log(e.target.value);
   };
   return (
     <div>
       <form className='form-login mt-5' onSubmit={handleLogin}>
+      <h3>Log In</h3>
         <input 
         type='text' 
         placeholder='Username' 

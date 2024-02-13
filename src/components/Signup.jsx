@@ -7,8 +7,7 @@ function Signup() {
     const [email, setEmail] = useState('');
     const [passWord, setPassWord] = useState('');
     const handleRegister = (e) => {
-        e.preventDefault();
-        console.log('testing');
+        console.log(e.target.value);
         
     }
 

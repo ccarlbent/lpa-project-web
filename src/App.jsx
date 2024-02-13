@@ -4,6 +4,8 @@ import Navbar from './components/Navbar/Navbar';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import './App.css';
+import Footer from './components/Footer';
+import Product from './components/Product/Product';
 
 
 
@@ -16,6 +18,8 @@ function App() {
         <Routes>
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<Signup/>}/>
+          <Route path='/about' element={<about/>}/>
+          <Route path='/contacts' element={<Footer/>}/>
         </Routes>
       </div>
     </Router>

@@ -14,12 +14,12 @@ const LinkMenu = [
   {
     id: 2,
     name: 'About',
-    link: '/about'
+    link: '/#abouts'
   },
   {
     id: 3,
     name: 'Contacts',
-    link: '/contacts'
+    link: '/#contacts'
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const LinkMenu = [
   
 ]
 
-function Navbar({}) {
+function Navbar() {
 
 
 
