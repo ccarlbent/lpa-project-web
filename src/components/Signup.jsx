@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -35,7 +36,12 @@ function Signup() {
             onChange={(e) => setPassWord(e.target.value)}/>
             <button type='submit'>Register</button>
         </div>
-
+        <div className='selet-signup-forgotpass'>
+          <Link to="/login">
+             <button type="button" className="btn btn-danger">Log In</button>
+          </Link>
+          <a href='#'>Forgot Password?</a>
+        </div>
       </form>
     </div>
   )

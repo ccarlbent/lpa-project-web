@@ -1,4 +1,9 @@
 import React from 'react';
+import { FaFacebook } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+
 
 function Footer() {
   return (
@@ -21,10 +26,12 @@ function Footer() {
           <div className='col-md-3 col-lg-3 col-xl-3 mx-auto mt-3'>
             <h3>Follow Us</h3>
             <hr/>
-            <i class="fa-brands fa-x-twitter"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-tiktok"></i>
-            <i class="fa-brands fa-facebook"></i>
+            <form className='web-icon'>
+              <FaFacebook/>
+              <FaGithub />
+              <FaGoogle />
+              <FaTwitter />
+            </form>
           </div>
         </div>
       </footer>
