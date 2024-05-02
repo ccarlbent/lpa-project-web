@@ -1,8 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import { FaSearch } from "react-icons/fa";
-//import { FaCartPlus } from "react-icons/fa";
-//import Darkmode from './Darkmode';
 
 
 const LinkMenu = [
@@ -55,7 +52,14 @@ function Navbar() {
           <input className='form-control me-2' type='search' placeholder='Search' aria-label='Search'></input>
           <button className='btn btn-outline-secondary' type='submit'>Search</button>
         </form>
-       
+        <div className="btn-group ms-3" role="group" aria-label="login-signup">
+            <Link to="/signup">
+                <button type="button" className="btn btn-primary">Sign Up</button>
+            </Link>
+            <Link to="/login">
+                <button type="button" className="btn btn-danger">Log In</button>
+            </Link>
+        </div>
       </div>
     </nav>
   )
