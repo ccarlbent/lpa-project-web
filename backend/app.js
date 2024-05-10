@@ -1,6 +1,6 @@
 const createError = require('http-errors');
 const express = require('express');
-//const path = require('path');
+const path = require('path');
 const cookie = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
@@ -14,6 +14,9 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 /**create middleware and http server */
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*'),
@@ -26,6 +29,11 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookie());
+app.use(express.static(path.join(__dirname, 'public')));
+
+//register routes in localhost:4000
+app.use('/', indexRouter);
+app.use('/user', userRouter);
 
 /**error handling */
 app.use((error, req, res, next) => {
@@ -37,13 +45,8 @@ app.use((error, req, res, next) => {
 
 //create error
 app.use((req, res, next) => {
+    console.log(res);
     next(createError(404));
 })
 
-//register routes in localhost:3306
-app.use('/', indexRouter);
-app.use('/', userRouter);
-
-
 module.exports = app;
-
