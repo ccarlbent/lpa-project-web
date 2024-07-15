@@ -2,10 +2,8 @@ const express = require('express');
 const router = express.Router();
 const userController = require('../controller/user');
 
-/**routes for register
- * 
- router.post('/register', userController.register,);
- */
+/**routes for Signup*/
+//router.post('/signup', userController.Signup);
 
 /**routes for update 
  * router.post('/update', userController.register,);
@@ -16,6 +14,6 @@ const userController = require('../controller/user');
 /**routes for login 
  * router.post('/login', userController.register,);
 */
-router.get('/', userController.dbConnection);
+router.get('/db', userController.confirmDbConnection);
 
 module.exports = router;

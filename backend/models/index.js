@@ -28,11 +28,7 @@ fs
   })
   .forEach(file => {
     const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
-    if (typeof model === 'function') {
-      db[model.name] = model(sequelize, Sequelize.DataTypes);
-    } else {
-      console.error('Module ${file} does not export a function');
-    }
+    db[model.name] = model;
   });
 
 Object.keys(db).forEach(modelName => {
