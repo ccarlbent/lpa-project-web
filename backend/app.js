@@ -5,6 +5,7 @@ const cookie = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
+
 /** create router here*/
 const indexRouter = require('./routes/index');
 const userRouter = require('./routes/user');
@@ -40,7 +41,7 @@ app.use(function (req, res, next) {
 /**error handling */
 app.use((error, req, res, next) => {
     res.locals.message = error.message;
-    res.locals.error = req.app.get('env') === 'success' ? error: {};
+    res.locals.error = req.app.get('env') === 'development' ? error: {};
     res.status(error.status || 500);
     res.render('error');
 });

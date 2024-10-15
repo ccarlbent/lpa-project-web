@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "db_connect.js",
+  "main": "",
   "scripts": {
     "dev": "nodemon ./idk/www",
     "start": "node ./idk/www "
@@ -25,6 +25,7 @@
     "mysql2": "^3.10.2",
     "nodemon": "^3.1.4",
     "pg": "^8.11.3",
+    "pug": "^3.0.3",
     "sequelize": "^6.37.3",
     "sequelize-cli": "^6.6.2",
     "stripe": "^15.12.0"

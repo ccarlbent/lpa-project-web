@@ -4,7 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 
 
 function Menubar({cartItems , openCart }) {
- 
+
   return (
     <>
     <div className='bg-blue-400 shadow-lg'>

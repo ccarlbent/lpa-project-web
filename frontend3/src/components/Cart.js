@@ -1,7 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 function Cart({ closeCart , cartItems, delCart }) {
+
+  const navigate = useNavigate();
+
+  const handleCheckout = (e) => {
+    e.preventDefault();
+
+    navigate('/checkout');
+  }
   return (
     <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50'>
       <div className='bg-white p-6 rounded shadow-lg w-96'>
@@ -24,7 +33,8 @@ function Cart({ closeCart , cartItems, delCart }) {
             </li>
           ))}
         </ul>
-        <button className='mt-4 py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600'>
+        <button className='mt-4 py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600'
+        onClick={handleCheckout}>
           Checkout
         </button>
       </div>
